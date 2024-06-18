@@ -12,6 +12,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "base64-img": "^1.0.4",
+    "base64-img-promise": "^1.0.5",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",

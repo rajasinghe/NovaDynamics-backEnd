@@ -23,7 +23,9 @@ export const getSingleUser = async (req, res, next) => {
       res.status(200).json(results[0]);
       return;
     }
-    throw (new Error("id is not in valid format").status = 400);
+    const error = new Error("id is not in valid format");
+    error.status = 400;
+    throw error;
   } catch (e) {
     console.log(e);
     const error = new Error(e.code || e.message || "unknown error occured");
@@ -46,8 +48,9 @@ export const createUser = async (req, res, next) => {
       res.status(200).json(results);
       return;
     }
-
-    throw (Error("insufficent data to process the request").status = 400);
+    const error = new Error("insufficent data to process the request");
+    error.status = 400;
+    throw error;
   } catch (e) {
     console.log(e);
     const error = new Error(e.code || e.message || "unknown error occured");
@@ -69,7 +72,9 @@ export const updateUser = async (req, res, next) => {
       res.status(200).json(results);
       return;
     }
-    throw (new Error("insufficent data to process the request").status = 400);
+    const error = new Error("insufficent data to process the request");
+    error.status = 400;
+    throw error;
   } catch (e) {
     const error = new Error(e.code || e.message || "unknown error occured");
     next(error);
@@ -86,7 +91,9 @@ export const deleteUser = (req, res, next) => {
       res.status(200).json(results);
       return;
     }
-    throw new Error("id is not in valid format");
+    const error = new Error("id is not in valid format");
+    error.status = 400;
+    throw error;
   } catch (e) {
     const error = new Error(e.code || e.message || "unknown error occured");
     next(error);

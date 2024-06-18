@@ -3,7 +3,7 @@ import colors from "colors";
 const logger = (req, res, next) => {
   const methodColors = {
     GET: "green",
-    POST: "yelloe",
+    POST: "yellow",
     PUT: "blue",
     DELETE: "red",
   };
